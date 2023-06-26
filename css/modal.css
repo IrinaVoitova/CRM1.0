@@ -1,0 +1,483 @@
+.startModal {
+    /* display: none; */
+}
+
+.overlay {
+    max-width: 100%;
+    background-color: rgba(179, 163, 183, 0.5);
+    opacity: 10;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+
+.modal__container {
+    width: 792px;
+    min-width: 200px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #F2F0F9;
+    opacity: 11;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.modal {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #6E6893;
+}
+
+.modal__btn_close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    top: 20px;
+}
+
+.modal__close_svg:hover,
+.modal__close_svg:focus {
+    transform: scale(1.2);
+}
+.modal__close_svg:active {
+    transform: scale(1);
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+    padding: 32px 0 21px 0;
+}
+
+.modal__id {
+    color: #C5C5C5;
+    font-size: 10px;
+    align-self: center;
+    padding: 32px 0 21px 0;
+}
+
+.modal__hr {
+    height: 1px;
+    background: #C6C2DE;
+    margin-bottom: 21px;
+    border: 0;
+}
+
+.modal__fieldset {
+    padding: 28px;
+    border: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.modal__form {
+    display: grid;
+    grid-template: repeat(3, 15px 5px 40px 12px) 15px 5px 40px 32px 39px/10px 30px 10px 200px 24px 10px 240px;
+}
+
+.modal__label {
+    text-transform: uppercase;
+}
+
+.modal__label_name {
+    grid-area:  1/2/2/5;
+}
+
+.modal__input {
+    background: #F4F2FF;
+    border-radius: 6px;
+    border: 0;
+    outline: none;
+}
+
+.modal__input:active,
+.modal__input:focus {
+    background-color: #e7dcf8;
+    border: 1px solid #b6b6b6;
+}
+
+.modal__input_name {
+    grid-area:  3/1/4/5;
+}
+
+.modal__label_category {
+    grid-area:  5/2/6/5;
+}
+
+.modal__input_category {
+    grid-area:  7/1/8/5;
+}
+
+.modal__label_units {
+    grid-area:  9/2/10/5;
+}
+
+.modal__input_units {
+    grid-area:  11/1/12/5;
+}
+
+.modal__label_discount {
+    grid-area:  13/2/14/5;
+}
+
+.modal__checkbox {
+    display: none;
+}
+
+.modal__input_checkbox {
+    display: inline-block;
+    grid-area:  15/1/16/3;
+    background: #F4F2FF;
+    border-radius: 6px;
+    border: 0;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.modal__input_checkbox:after {
+    content: "";
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    display: inline-block;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+}
+
+.modal__input_checkbox:checked:after {
+    opacity: 1;
+}
+
+.modal__input_checkbox:checked + .modal__input_discount {
+    background: #F4F2FF;
+}
+
+.modal__input_discount {
+    grid-area:  15/4/16/5;
+    background: #e6e3f9;
+}
+
+.modal__label_description {
+    grid-area:  1/7/2/8;
+}
+
+.modal__textarea {
+    resize: none;
+}
+
+.modal__textarea_description {
+    grid-area:  3/6/8/8;
+}
+
+.modal__label_amount {
+    grid-area:  9/7/10/8;
+}
+
+.modal__input_amount {
+    grid-area:  11/6/12/8;
+}
+
+.modal__label_price {
+    grid-area:  13/7/14/8;
+}
+
+.modal__input_price {
+    grid-area:  15/6/16/8;
+}
+
+.modal__btn {
+    background: #6D5BD0;
+    border-radius: 6px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 19px;
+    height: 39px;
+}
+
+.modal__btn:hover {
+    background-color: #7561f6;
+}
+
+.modal__btn:focus {
+    border: 1px solid #7632a6;
+}
+
+.modal__btn:active {
+    box-sizing: border-box;
+    border: 2px solid #fefefe;
+}
+
+.modal__btn_img {
+    grid-area:  17/6/18/8;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.add__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 28px 39px 28px;
+    max-width: 580px;
+}
+
+.add__btn {
+    width: 200px;
+}
+
+.add__p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6E6893;
+}
+
+.add__p_span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6D5BD0;
+}
+
+
+@media (max-width: 810px) {
+    .modal__container {
+        width: 550px;
+    }
+
+    .modal {
+        max-width: 400px;
+    }
+    
+    .modal__btn_close {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .modal__title {
+        font-size: 22px;
+        line-height: 27px;
+        padding: 25px 0 15px 0;
+    }
+    
+    .modal__form {
+        grid-template: repeat(6, 15px 5px 40px 12px) 15px 5px 40px 32px 39px / 10px 30px 10px 280px;
+    }
+
+    .modal__label_name {
+        grid-area:  1/2/2/3;
+    }
+    
+    .modal__input_name {
+        grid-area:  3/1/4/5;
+    }
+    
+    .modal__label_category {
+        grid-area:  5/2/6/5;
+    }
+    
+    .modal__input_category {
+        grid-area:  7/1/8/5;
+    }
+    
+    .modal__label_units {
+        grid-area:  9/2/10/5;
+    }
+    
+    .modal__input_units {
+        grid-area:  11/1/12/5;
+    }
+    
+    .modal__label_discount {
+        grid-area:  13/2/14/5;
+    }
+
+    
+    .modal__input_checkbox {
+        grid-area:  15/1/16/3;
+    }
+    
+    .modal__input_discount {
+        grid-area:  15/4/16/5;
+    }
+    
+    .modal__label_description {
+        grid-area:  17/2/18/5;
+    }
+    
+    .modal__textarea_description {
+        grid-area:  19/1/20/5;
+    }
+    
+    .modal__label_amount {
+        grid-area:  21/2/22/5;
+    }
+    
+    .modal__input_amount {
+        grid-area:  23/1/24/5;
+    }
+    
+    .modal__label_price {
+        grid-area:  25/2/26/5;
+    }
+    
+    .modal__input_price {
+        grid-area:  27/1/28/5;
+    }
+    
+    .modal__btn_img {
+        grid-area:  29/1/30/5;
+    }
+    
+    .add__btn {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .add__p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .add__p_span {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .modal__container {
+        width: 420px;
+    }
+
+    .modal {
+        max-width: 310px;
+    }
+
+    .modal__header {
+        flex-direction: column;
+    }
+
+    .modal__id {
+        padding: 0;
+        align-self: flex-start;
+    }
+
+    .add__container {
+        padding: 28px 10px 25px 10px;
+        gap: 5px;
+    }
+    
+    .modal__fieldset {
+        padding: 5px;
+    }
+    
+    .modal__form {
+        grid-template: repeat(6, 15px 5px 40px 12px) 15px 5px 40px 32px 39px / 10px 30px 10px 250px;
+    }
+    
+    .add__btn {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .add__p_span {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .modal__container {
+        padding: 0 10px;
+        width: 330px;
+    }
+
+    .modal {
+        max-width: 250px;
+    }
+    
+    .modal__form {
+        grid-template: repeat(6, 15px 5px 40px 12px) 15px 5px 40px 32px 39px / 10px 30px 10px 190px;
+    }
+    
+    .modal__title {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    
+    .modal__title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 365px) {
+    .modal__container {
+        width: 280px;
+    }
+    .modal {
+        max-width: 210px;
+    }
+    
+    .modal__form {
+        grid-template: repeat(6, 15px 5px 40px 12px) 15px 5px 40px 32px 39px / 10px 30px 10px 150px;
+    }
+
+    .modal__btn_close {
+        width: 3px;
+        height: 3px;
+    }
+    
+    .modal__title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .modal__title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .modal__btn_img {
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    .add__btn {
+        font-size: 8px;
+        line-height: 13px;
+    }
+    
+    .add__p_span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
