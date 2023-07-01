@@ -81,19 +81,13 @@ function createRow(obj) {
     let table = document.querySelector('.tbody2');  
     let tr = document.createElement('tr');
     table.appendChild(tr);
-    let td = document.createElement('td');
-    tr.appendChild(document.createElement('td')).append(obj.id);
-    tr.appendChild(document.createElement('td')).append(obj.title);
-    tr.appendChild(document.createElement('td')).append(obj.price);
-    tr.appendChild(document.createElement('td')).append(obj.description);
-    tr.appendChild(document.createElement('td')).append(obj.category);
-    tr.appendChild(document.createElement('td')).append(obj.discont);
-    tr.appendChild(document.createElement('td')).append(obj.count);
-    tr.appendChild(document.createElement('td')).append(obj.units);
-    tr.appendChild(document.createElement('td')).append(obj.images.small);
-    tr.appendChild(document.createElement('td')).append(obj.images.big);
+    for(let key in obj) {
+        let td = document.createElement('td');
+        table.appendChild(tr).appendChild(td).append(obj[key]);
     console.log(tr)
-    };
+    }
+};
+
 
 function renderGoods(arr) {
         let result = arr.map(element => {
@@ -136,8 +130,3 @@ renderGoods(arr1);
 // })
 // }
 // renderGoods(arr1);
-
-
-
-
-
