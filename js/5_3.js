@@ -72,38 +72,72 @@ const arr1 = [
         "small": "img/lan_proconnect43-3-25.jpg",
         "big": "img/lan_proconnect43-3-25-b.jpg"
     }
-    }
+    },
 ];
 
 
-function createRow(obj1) {
+
+function createRow(obj) {
     let table = document.querySelector('.tbody2');  
     let tr = document.createElement('tr');
     table.appendChild(tr);
-    for(let key in obj1) {
-        let td = document.createElement('td');
-        table.appendChild(tr).appendChild(td).append(obj1[key]);
+    let td = document.createElement('td');
+    tr.appendChild(document.createElement('td')).append(obj.id);
+    tr.appendChild(document.createElement('td')).append(obj.title);
+    tr.appendChild(document.createElement('td')).append(obj.price);
+    tr.appendChild(document.createElement('td')).append(obj.description);
+    tr.appendChild(document.createElement('td')).append(obj.category);
+    tr.appendChild(document.createElement('td')).append(obj.discont);
+    tr.appendChild(document.createElement('td')).append(obj.count);
+    tr.appendChild(document.createElement('td')).append(obj.units);
+    tr.appendChild(document.createElement('td')).append(obj.images.small);
+    tr.appendChild(document.createElement('td')).append(obj.images.big);
     console.log(tr)
-    }
-};
-createRow(obj1);
+    };
 
-function renderGoods(arr1) {
-    let table = document.querySelector('.tbody2')
-    let result = arr1.map(element => {
-        let tr = document.createElement('tr');
-        table.append(tr);
-        tr.appendChild(document.createElement('td')).append(element.id);
-        tr.appendChild(document.createElement('td')).append(element.title);
-        tr.appendChild(document.createElement('td')).append(element.price);
-        tr.appendChild(document.createElement('td')).append(element.description);
-        tr.appendChild(document.createElement('td')).append(element.category);
-        tr.appendChild(document.createElement('td')).append(element.discont);
-        tr.appendChild(document.createElement('td')).append(element.count);
-        tr.appendChild(document.createElement('td')).append(element.units);
-        tr.appendChild(document.createElement('td')).append(element.images.small);
-        tr.appendChild(document.createElement('td')).append(element.images.big);
-        console.log(tr);
-})
+function renderGoods(arr) {
+        let result = arr.map(element => {
+            createRow(element);
+    });
 }
 renderGoods(arr1);
+
+
+
+// function createRow(obj1) {
+//     let table = document.querySelector('.tbody2');  
+//     let tr = document.createElement('tr');
+//     table.appendChild(tr);
+//     for(let key in obj1) {
+//         let td = document.createElement('td');
+//         table.appendChild(tr).appendChild(td).append(obj1[key]);
+//     console.log(tr)
+//     }
+// };
+// createRow(obj1);
+
+
+// function renderGoods(arr1) {
+//     let table = document.querySelector('.tbody2')
+//     let result = arr1.map(element => {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+//         tr.appendChild(document.createElement('td')).append(element.id);
+//         tr.appendChild(document.createElement('td')).append(element.title);
+//         tr.appendChild(document.createElement('td')).append(element.price);
+//         tr.appendChild(document.createElement('td')).append(element.description);
+//         tr.appendChild(document.createElement('td')).append(element.category);
+//         tr.appendChild(document.createElement('td')).append(element.discont);
+//         tr.appendChild(document.createElement('td')).append(element.count);
+//         tr.appendChild(document.createElement('td')).append(element.units);
+//         tr.appendChild(document.createElement('td')).append(element.images.small);
+//         tr.appendChild(document.createElement('td')).append(element.images.big);
+//         console.log(tr);
+// })
+// }
+// renderGoods(arr1);
+
+
+
+
+
