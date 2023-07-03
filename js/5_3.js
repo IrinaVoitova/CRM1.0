@@ -1,6 +1,6 @@
 'use strict';
 
-const obj1 = 
+const object = 
     {
     "id": 253842678,
     "title": "Смартфон Xiaomi 11T 8/128GB",
@@ -76,18 +76,31 @@ const arr1 = [
 ];
 
 
-
 function createRow(obj) {
-    let table = document.querySelector('.tbody2');  
-    let tr = document.createElement('tr');
-    table.appendChild(tr);
-    for(let key in obj) {
-        let td = document.createElement('td');
-        table.appendChild(tr).appendChild(td).append(obj[key]);
-    console.log(tr)
+    const tr = document.createElement('tr');
+    for (let key in obj) {
+        function isObject(obj) {
+            if (typeof obj[key] === 'object' && obj[key] !== null) {
+                return true;
+            }
+            return false;
+        };
+        if(!isObject(obj)){
+            const td = document.createElement('td');
+            td.textContent = obj[key];
+            tr.appendChild(td);}
+        else {
+                const nestedObj = obj[key];
+                for (let value in nestedObj) {
+                const td = document.createElement('td');
+                td.textContent = nestedObj[value];
+                tr.appendChild(td);}
+        } 
     }
-};
-
+    let table = document.querySelector('.tbody2');  
+    table.appendChild(tr);
+    console.log(tr);
+}
 
 function renderGoods(arr) {
         let result = arr.map(element => {
@@ -95,38 +108,3 @@ function renderGoods(arr) {
     });
 }
 renderGoods(arr1);
-
-
-
-// function createRow(obj1) {
-//     let table = document.querySelector('.tbody2');  
-//     let tr = document.createElement('tr');
-//     table.appendChild(tr);
-//     for(let key in obj1) {
-//         let td = document.createElement('td');
-//         table.appendChild(tr).appendChild(td).append(obj1[key]);
-//     console.log(tr)
-//     }
-// };
-// createRow(obj1);
-
-
-// function renderGoods(arr1) {
-//     let table = document.querySelector('.tbody2')
-//     let result = arr1.map(element => {
-//         let tr = document.createElement('tr');
-//         table.append(tr);
-//         tr.appendChild(document.createElement('td')).append(element.id);
-//         tr.appendChild(document.createElement('td')).append(element.title);
-//         tr.appendChild(document.createElement('td')).append(element.price);
-//         tr.appendChild(document.createElement('td')).append(element.description);
-//         tr.appendChild(document.createElement('td')).append(element.category);
-//         tr.appendChild(document.createElement('td')).append(element.discont);
-//         tr.appendChild(document.createElement('td')).append(element.count);
-//         tr.appendChild(document.createElement('td')).append(element.units);
-//         tr.appendChild(document.createElement('td')).append(element.images.small);
-//         tr.appendChild(document.createElement('td')).append(element.images.big);
-//         console.log(tr);
-// })
-// }
-// renderGoods(arr1);
