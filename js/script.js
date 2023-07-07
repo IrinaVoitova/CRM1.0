@@ -22,22 +22,33 @@
 // console.log(total);
 
 
+const functional = () => {
+    const openModal = () => {
+        const btnAdd = document.querySelector('.table__add');
+        const overlay = document.querySelector('.overlay');
+        const btnExit = document.querySelector('.modal__btn_close');
 
-const openModal = () => {
-    const btnAdd = document.querySelector('.table__add');
-    const overlay = document.querySelector('.overlay');
-    const btnExit = document.querySelector('.modal__btn_close');
+        const startModal = () => {
+            overlay.classList.add('startModal')
+        };
 
-    const startModal = () => {
-        overlay.classList.add('startModal')
+        const exitModal = () => {
+            overlay.classList.remove('startModal')
+        };
+
+        btnAdd.addEventListener('click', startModal);
+        btnExit.addEventListener('click', exitModal);
     };
 
-    const exitModal = () => {
-        overlay.classList.remove('startModal')
-    };
-
-    btnAdd.addEventListener('click', startModal);
-    btnExit.addEventListener('click', exitModal);
+    const table = document.querySelector('.table');
+    const deleteRow = table.addEventListener('click', e => {
+        if(e.target.closest('.table__body_btn-delete')) {
+            e.target.closest('.table__body-row').remove();
+        };
+    });
+    openModal();
 };
 
-openModal();
+functional();
+
+

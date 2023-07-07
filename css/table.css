@@ -255,7 +255,14 @@ body {
 .footer-slider__left-btn:hover,
 .footer-slider__right-btn:hover,
 .footer__number-of-goods_btn:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
+}
+
+.body__btn-svg:active,
+.footer-slider__left-btn:active,
+.footer-slider__right-btn:active,
+.footer__number-of-goods_btn:active {
+    transform: scale(0.9);
 }
 
 .footer-row {
