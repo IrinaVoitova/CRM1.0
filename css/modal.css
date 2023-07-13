@@ -175,13 +175,20 @@
     opacity: 1;
 }
 
-.modal__input_checkbox:checked + .modal__input_discount {
+/* .modal__input_checkbox:checked + .modal__input_discount {
     background: #F4F2FF;
-}
+} */
+
+
 
 .modal__input_discount {
     grid-area:  15/4/16/5;
     background: #e6e3f9;
+}
+
+
+.modal__input_discount-checked {
+    background: #F4F2FF;
 }
 
 .modal__label_description {
@@ -212,6 +219,21 @@
     grid-area:  15/6/16/8;
 }
 
+/* .modal__label_btn_img {
+    outline: none;
+	text-decoration: none;
+
+} */
+
+.modal__input-img {
+    position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
 .modal__btn {
     background: #6D5BD0;
     border-radius: 6px;
@@ -220,6 +242,9 @@
     font-size: 16px;
     line-height: 19px;
     height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal__btn:hover {
